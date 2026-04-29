@@ -5,6 +5,81 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LC Lanchas Ilhabela – Passeios e Fretamento de Lancha</title>
 <meta name="description" content="Passeios e fretamento de lancha em Ilhabela-SP. Praias paradisíacas, marinheiro experiente, conforto e segurança. Fale agora pelo WhatsApp!">
+
+<!-- ===== OPEN GRAPH (preview bonito no WhatsApp, Instagram, Facebook) ===== -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://benevolent-genie-55595c.netlify.app/">
+<meta property="og:title" content="LC Lanchas Ilhabela – Passeios e Fretamento de Lancha">
+<meta property="og:description" content="Explore as praias paradisíacas de Ilhabela com o Frank e a LC Lanchas. Segurança, conforto e experiências inesquecíveis. Fale pelo WhatsApp!">
+<meta property="og:image" content="https://benevolent-genie-55595c.netlify.app/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="LC Lanchas Ilhabela">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LC Lanchas Ilhabela – Passeios e Fretamento de Lancha">
+<meta name="twitter:description" content="Explore as praias paradisíacas de Ilhabela com a LC Lanchas. Fale pelo WhatsApp!">
+<meta name="twitter:image" content="https://benevolent-genie-55595c.netlify.app/og-image.jpg">
+
+<!-- ===== SCHEMA LOCALBUSINESS (SEO local Google) ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "LC Lanchas Ilhabela",
+  "description": "Passeios e fretamento de lancha em Ilhabela-SP. Praias paradisíacas, marinheiro experiente Frank, conforto e segurança.",
+  "url": "https://benevolent-genie-55595c.netlify.app/",
+  "telephone": "+55-12-99140-0030",
+  "priceRange": "$$",
+  "image": "https://benevolent-genie-55595c.netlify.app/og-image.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Ilhabela",
+    "addressRegion": "SP",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -23.7784,
+    "longitude": -45.3581
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "07:00",
+    "closes": "18:00"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5.0",
+    "reviewCount": "6",
+    "bestRating": "5"
+  },
+  "sameAs": [
+    "https://www.instagram.com/lclanchasilhabela/"
+  ]
+}
+</script>
+
+<!-- ===== GOOGLE ANALYTICS 4 ===== -->
+<!-- INSTRUÇÃO: substitua G-XXXXXXXXXX pelo seu Measurement ID do GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+
+  // Rastreamento de cliques no WhatsApp
+  function trackWhatsApp(origem) {
+    gtag('event', 'whatsapp_click', {
+      'event_category': 'conversao',
+      'event_label': origem
+    });
+  }
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -460,7 +535,7 @@ footer{background:var(--navy);color:white;padding:72px 56px 32px;}
     <li><a href="#praias">Roteiros</a></li>
     <li><a href="#quiz">Meu Passeio</a></li>
     <li><a href="#baleias">🐋 Baleias</a></li><li><a href="#depoimentos">Avaliações</a></li>
-    <li><a href="https://wa.me/5512991400030?text=Olá! Gostaria de reservar um passeio." class="nav-cta">📲 Reservar</a></li>
+    <li><a href="https://wa.me/5512991400030?text=Olá! Gostaria de reservar um passeio." class="nav-cta" onclick="trackWhatsApp('nav')">📲 Reservar</a></li>
   </ul>
 </nav>
 
@@ -473,7 +548,7 @@ footer{background:var(--navy);color:white;padding:72px 56px 32px;}
     <h1>O Mar de<br><em>Ilhabela</em><br>Te Espera</h1>
     <p>Praias só acessíveis pelo mar, marinheiro experiente e uma lancha pronta pra te levar às vistas mais incríveis do litoral paulista.</p>
     <div class="hero-btns">
-      <a href="https://wa.me/5512991400030?text=Olá! Quero reservar um passeio de lancha em Ilhabela." class="btn-wpp">
+      <a href="https://wa.me/5512991400030?text=Olá! Quero reservar um passeio de lancha em Ilhabela." class="btn-wpp" onclick="trackWhatsApp('hero')">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         Falar no WhatsApp
       </a>
@@ -625,7 +700,7 @@ footer{background:var(--navy);color:white;padding:72px 56px 32px;}
             <span class="spec">🧊 Cooler incluso</span>
             <span class="spec">⚓ Marinheiro incluso</span>
           </div>
-          <a href="https://wa.me/5512991400030?text=Olá Frank! Quero saber sobre a Victoire para passeio em Ilhabela." class="lancha-cta">Consultar disponibilidade →</a>
+          <a href="https://wa.me/5512991400030?text=Olá Frank! Quero saber sobre a Victoire para passeio em Ilhabela." class="lancha-cta" onclick="trackWhatsApp('lancha-victoire')">Consultar disponibilidade →</a>
         </div>
       </div>
       <div class="lancha-card">
@@ -640,7 +715,7 @@ footer{background:var(--navy);color:white;padding:72px 56px 32px;}
             <span class="spec">☀️ Open</span>
             <span class="spec">⚓ Marinheiro incluso</span>
           </div>
-          <a href="https://wa.me/5512991400030?text=Olá Frank! Quero saber sobre a lancha esportiva para passeio em Ilhabela." class="lancha-cta">Consultar disponibilidade →</a>
+          <a href="https://wa.me/5512991400030?text=Olá Frank! Quero saber sobre a lancha esportiva para passeio em Ilhabela." class="lancha-cta" onclick="trackWhatsApp('lancha-esportiva')">Consultar disponibilidade →</a>
         </div>
       </div>
     </div>
@@ -719,7 +794,7 @@ footer{background:var(--navy);color:white;padding:72px 56px 32px;}
 <div class="cta-full">
   <h2>Pronto para viver<br>essa experiência?</h2>
   <p>Fale com Frank agora mesmo. Atendimento rápido pelo WhatsApp, sem burocracia.</p>
-  <a href="https://wa.me/5512991400030?text=Olá Frank! Quero reservar um passeio de lancha em Ilhabela." class="btn-wpp" style="font-size:1.05rem;padding:18px 48px;">
+  <a href="https://wa.me/5512991400030?text=Olá Frank! Quero reservar um passeio de lancha em Ilhabela." class="btn-wpp" onclick="trackWhatsApp('cta-banner')" style="font-size:1.05rem;padding:18px 48px;">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
     Falar com Frank agora
   </a>
@@ -748,7 +823,7 @@ footer{background:var(--navy);color:white;padding:72px 56px 32px;}
             <span style="color:var(--gold);font-size:1.2rem;">✦</span> Uma experiência que você nunca vai esquecer
           </li>
         </ul>
-        <a href="https://wa.me/5512991400030?text=Olá Frank! Quero saber sobre o passeio de avistamento de baleias em Ilhabela." class="btn-wpp" style="display:inline-flex;">
+        <a href="https://wa.me/5512991400030?text=Olá Frank! Quero saber sobre o passeio de avistamento de baleias em Ilhabela." class="btn-wpp" onclick="trackWhatsApp('baleias')" style="display:inline-flex;">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
           Quero ver as baleias!
         </a>
@@ -835,7 +910,7 @@ footer{background:var(--navy);color:white;padding:72px 56px 32px;}
 </footer>
 
 <!-- WPP FLOAT -->
-<a class="wpp-float" href="https://wa.me/5512991400030?text=Olá Frank! Quero reservar um passeio de lancha em Ilhabela." title="Falar no WhatsApp">
+<a class="wpp-float" href="https://wa.me/5512991400030?text=Olá Frank! Quero reservar um passeio de lancha em Ilhabela." title="Falar no WhatsApp" onclick="trackWhatsApp('botao-flutuante')">
   <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
 </a>
 
@@ -899,6 +974,7 @@ function showResult() {
   document.getElementById('resultTitle').textContent = title;
   document.getElementById('resultDesc').textContent = desc;
   document.getElementById('resultCTA').href = 'https://wa.me/5512991400030?text=' + encodeURIComponent(msg);
+  document.getElementById('resultCTA').onclick = function(){ trackWhatsApp('quiz-resultado'); };
   document.getElementById('quizResult').classList.add('show');
 }
 
