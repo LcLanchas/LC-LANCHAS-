@@ -523,6 +523,14 @@ footer{background:var(--navy);color:white;padding:72px 56px 32px;}
   .cta-full h2{font-size:1.8rem;}
   .dep-big{font-size:3rem;}
 }
+
+/* ===== WAVE DIVIDERS ===== */
+.wave-divider{overflow:hidden;line-height:0;position:relative;height:80px;}
+.wave-divider.wave-navy-sand{background:var(--navy);}
+.wave-divider.wave-sand-navy{background:var(--sand);}
+.wave-divider.wave-white-sand{background:white;}
+.wave-svg{display:block;width:200%;height:80px;animation:waveSlide 8s linear infinite;}
+@keyframes waveSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 </style>
 <script src="https://t.contentsquare.net/uxa/dca1727e6f96b.js"></script>
 </head>
@@ -560,12 +568,15 @@ footer{background:var(--navy);color:white;padding:72px 56px 32px;}
 </section>
 
 <!-- STATS -->
-<div class="stats">
-  <div class="stat-item"><span class="stat-num">5.0</span><div class="stat-label">⭐ Google Avaliações</div></div>
-  <div class="stat-item"><span class="stat-num">14</span><div class="stat-label">Pessoas por embarque</div></div>
-  <div class="stat-item"><span class="stat-num">40+</span><div class="stat-label">Praias em Ilhabela</div></div>
+<div class="stats" id="stats-bar">
+  <div class="stat-item"><span class="stat-num" data-target="5.0" data-decimals="1">5.0</span><div class="stat-label">⭐ Google Avaliações</div></div>
+  <div class="stat-item"><span class="stat-num" data-target="14">14</span><div class="stat-label">Pessoas por embarque</div></div>
+  <div class="stat-item"><span class="stat-num" data-target="40" data-suffix="+">40+</span><div class="stat-label">Praias em Ilhabela</div></div>
   <div class="stat-item"><span class="stat-num">Frank</span><div class="stat-label">Seu marinheiro de confiança</div></div>
 </div>
+
+<!-- WAVE: navy → sand -->
+<div class="wave-divider wave-navy-sand" aria-hidden="true"><svg class="wave-svg" viewBox="0 0 2880 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 C1680,80 1920,0 2160,40 C2400,80 2640,0 2880,40 L2880,80 L0,80 Z" fill="#f7f3ec"/></svg></div>
 
 <!-- STORY -->
 <section class="story" id="sobre">
@@ -587,6 +598,9 @@ footer{background:var(--navy);color:white;padding:72px 56px 32px;}
     </div>
   </div>
 </section>
+
+<!-- WAVE: sand → navy -->
+<div class="wave-divider wave-sand-navy" aria-hidden="true"><svg class="wave-svg" style="animation-direction:reverse" viewBox="0 0 2880 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 C1680,80 1920,0 2160,40 C2400,80 2640,0 2880,40 L2880,80 L0,80 Z" fill="#071525"/></svg></div>
 
 <!-- QUIZ -->
 <section class="quiz-section" id="quiz">
@@ -681,6 +695,9 @@ footer{background:var(--navy);color:white;padding:72px 56px 32px;}
     </div>
   </div>
 </section>
+
+<!-- WAVE: white → sand -->
+<div class="wave-divider wave-white-sand" aria-hidden="true"><svg class="wave-svg" viewBox="0 0 2880 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 C1680,80 1920,0 2160,40 C2400,80 2640,0 2880,40 L2880,80 L0,80 Z" fill="#f7f3ec"/></svg></div>
 
 <!-- LANCHAS -->
 <section class="lanchas" id="lanchas">
@@ -998,6 +1015,45 @@ document.querySelectorAll('.lancha-card,.dep-card,.praia-card,.inc').forEach(el=
   el.style.opacity=0;el.style.transform='translateY(24px)';el.style.transition='opacity 0.6s ease,transform 0.6s ease';
   observer.observe(el);
 });
+
+// ANIMATED COUNTERS
+function easeOutQuart(t){return 1-(--t)*t*t*t;}
+function animateCounter(el){
+  const target=parseFloat(el.dataset.target);
+  const decimals=parseInt(el.dataset.decimals||'0');
+  const suffix=el.dataset.suffix||'';
+  const duration=2000;
+  const start=performance.now();
+  (function step(now){
+    const elapsed=Math.min(now-start,duration);
+    const progress=easeOutQuart(elapsed/duration);
+    el.textContent=(target*progress).toFixed(decimals)+suffix;
+    if(elapsed<duration)requestAnimationFrame(step);
+    else el.textContent=target.toFixed(decimals)+suffix;
+  })(start);
+}
+const counterObserver=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.stat-num[data-target]').forEach(n=>{
+        if(!n.dataset.animated){n.dataset.animated='1';animateCounter(n);}
+      });
+    }
+  });
+},{threshold:0.3});
+const statsBar=document.getElementById('stats-bar');
+if(statsBar)counterObserver.observe(statsBar);
+
+// PARALLAX HERO
+const heroBg=document.querySelector('.hero-bg');
+const heroSection=document.querySelector('.hero');
+if(heroBg&&heroSection){
+  window.addEventListener('scroll',()=>{
+    if(window.scrollY<heroSection.offsetHeight){
+      heroBg.style.backgroundPositionY='calc(50% + '+Math.round(window.scrollY*0.5)+'px)';
+    }
+  },{passive:true});
+}
 </script>
 </body>
 </html>
