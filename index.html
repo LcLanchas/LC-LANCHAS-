@@ -531,6 +531,8 @@ footer{background:var(--navy);color:white;padding:72px 56px 32px;}
 .wave-divider.wave-white-sand{background:white;}
 .wave-svg{display:block;width:200%;height:80px;animation:waveSlide 8s linear infinite;}
 @keyframes waveSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:768px){.wave-divider{height:50px;}.wave-svg{height:50px;animation-duration:14s;}}
+@media(prefers-reduced-motion:reduce){.wave-svg{animation:none;transform:translateX(-25%);}}
 </style>
 <script src="https://t.contentsquare.net/uxa/dca1727e6f96b.js"></script>
 </head>
@@ -1044,10 +1046,11 @@ const counterObserver=new IntersectionObserver((entries)=>{
 const statsBar=document.getElementById('stats-bar');
 if(statsBar)counterObserver.observe(statsBar);
 
-// PARALLAX HERO
+// PARALLAX HERO — desativado no mobile (iOS Safari instável com background-position dinâmico)
 const heroBg=document.querySelector('.hero-bg');
 const heroSection=document.querySelector('.hero');
-if(heroBg&&heroSection){
+const isMobile=window.matchMedia('(max-width:768px)').matches;
+if(heroBg&&heroSection&&!isMobile){
   window.addEventListener('scroll',()=>{
     if(window.scrollY<heroSection.offsetHeight){
       heroBg.style.backgroundPositionY='calc(50% + '+Math.round(window.scrollY*0.5)+'px)';
