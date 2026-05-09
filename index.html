@@ -530,11 +530,12 @@ footer{background:var(--navy);color:white;padding:72px 56px 32px;}
 .wave-divider.wave-sand-navy{background:var(--sand);}
 .wave-divider.wave-white-sand{background:white;}
 .wave-divider.wave-white-navy{background:white;}
-.video-lancha{background:var(--navy);padding:100px 24px;text-align:center;}
+.video-lancha{background:var(--navy);padding:80px 24px 0;text-align:center;}
 .video-lancha .title{color:var(--gold);}
 .video-lancha .label{color:var(--gold);opacity:0.7;}
-.video-lancha video{width:100%;max-width:900px;border-radius:16px;display:block;margin:0 auto;}
-@media(max-width:768px){.video-lancha{padding:60px 16px;}}
+.video-lancha-wrap{max-width:900px;margin:48px auto 0;}
+.video-lancha-wrap video{width:100%;border-radius:16px;display:block;object-fit:cover;}
+@media(max-width:768px){.video-lancha{padding:40px 0 0;}.video-lancha .inner{padding:0 16px;}.video-lancha-wrap{max-width:100%;margin-top:28px;}.video-lancha-wrap video{border-radius:0;}}
 .wave-svg{display:block;width:200%;height:80px;animation:waveSlide 8s linear infinite;}
 @keyframes waveSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:768px){.wave-divider{height:50px;}.wave-svg{height:50px;animation-duration:14s;}}
@@ -712,6 +713,8 @@ footer{background:var(--navy);color:white;padding:72px 56px 32px;}
   <div class="inner">
     <div class="label">Veja ao vivo</div>
     <h2 class="title">Nossa Lancha em Ação</h2>
+  </div>
+  <div class="video-lancha-wrap">
     <video autoplay loop muted playsinline>
       <source src="lancha.mp4" type="video/mp4">
     </video>
