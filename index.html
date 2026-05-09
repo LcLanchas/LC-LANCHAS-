@@ -529,6 +529,12 @@ footer{background:var(--navy);color:white;padding:72px 56px 32px;}
 .wave-divider.wave-navy-sand{background:var(--navy);}
 .wave-divider.wave-sand-navy{background:var(--sand);}
 .wave-divider.wave-white-sand{background:white;}
+.wave-divider.wave-white-navy{background:white;}
+.video-lancha{background:var(--navy);padding:100px 24px;text-align:center;}
+.video-lancha .title{color:var(--gold);}
+.video-lancha .label{color:var(--gold);opacity:0.7;}
+.video-lancha video{width:100%;max-width:900px;border-radius:16px;display:block;margin:0 auto;}
+@media(max-width:768px){.video-lancha{padding:60px 16px;}}
 .wave-svg{display:block;width:200%;height:80px;animation:waveSlide 8s linear infinite;}
 @keyframes waveSlide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(max-width:768px){.wave-divider{height:50px;}.wave-svg{height:50px;animation-duration:14s;}}
@@ -698,8 +704,22 @@ footer{background:var(--navy);color:white;padding:72px 56px 32px;}
   </div>
 </section>
 
-<!-- WAVE: white → sand -->
-<div class="wave-divider wave-white-sand" aria-hidden="true"><svg class="wave-svg" viewBox="0 0 2880 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 C1680,80 1920,0 2160,40 C2400,80 2640,0 2880,40 L2880,80 L0,80 Z" fill="#f7f3ec"/></svg></div>
+<!-- WAVE: white → navy -->
+<div class="wave-divider wave-white-navy" aria-hidden="true"><svg class="wave-svg" style="animation-direction:reverse" viewBox="0 0 2880 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 C1680,80 1920,0 2160,40 C2400,80 2640,0 2880,40 L2880,80 L0,80 Z" fill="#071525"/></svg></div>
+
+<!-- VIDEO LANCHA -->
+<section class="video-lancha" id="video-lancha">
+  <div class="inner">
+    <div class="label">Veja ao vivo</div>
+    <h2 class="title">Nossa Lancha em Ação</h2>
+    <video autoplay loop muted playsinline>
+      <source src="lancha.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<!-- WAVE: navy → sand -->
+<div class="wave-divider wave-navy-sand" aria-hidden="true"><svg class="wave-svg" viewBox="0 0 2880 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 C1680,80 1920,0 2160,40 C2400,80 2640,0 2880,40 L2880,80 L0,80 Z" fill="#f7f3ec"/></svg></div>
 
 <!-- LANCHAS -->
 <section class="lanchas" id="lanchas">
